@@ -11,18 +11,11 @@ class Album(models.Model):
     album_logo = models.CharField(max_length=1000)
 
     def __unicode__(self):
-        return self.artist
-        return self.album_title
-        return self.genre
-        return self.album_logo
-
-
+        return self.album_title + '-' + self.artist
 class Song(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     file_type = models.CharField(max_length=10)
     song_title = models.CharField(max_length=250)
 
     def __unicode__(self):
-        return self.album
-        return self.file_type
         return self.song_title
