@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'template',
+            'music/template',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
