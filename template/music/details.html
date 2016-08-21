@@ -1,11 +1,17 @@
 <image src = "{{ album.album_logo }}" width="250" height="250"></image>
 <h1>Album Name:{{ album.album_title }} </h1>
 <h3>Artist Name:{{ album.artist }} </h3>
+{% if album.song_set.all %}
 <ul>
     <h3>List of Songs</h3>
-    {% for song in album.song_set.all %}
-    <li>
-        {{ song.song_title }} - {{ song.file_type }}
-    </li>
-    {% endfor %}
+
+        {% for song in album.song_set.all %}
+        <li>
+            {{ song.song_title }} - {{ song.file_type }}
+        </li>
+        {% endfor %}
 </ul>
+{% else %}
+        <h2>No Songs in album</h2>
+{% endif %}
+
